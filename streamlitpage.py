@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 def show_liver_cancer_page():
 
     # Load liver cancer data
-    liver_cancer_across_countries = pd.read_csv('C:/Users/acc/Desktop/HCA project/regional liver cancer death rate per 100,000.csv')
+    liver_cancer_across_countries = pd.read_csv('regional liver cancer death rate per 100,000.csv')
 
     st.markdown("<h1 style='text-align: center;'>Liver Cancer Rates in Cyprus</h1><br><br><br><br>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: left;'>Liver Cancer Death Rate in the Mediterranean Region</h3>", unsafe_allow_html=True)
@@ -82,7 +82,7 @@ def show_liver_cancer_page():
 
     ####################################################################
     # Load liver cancer death rate data
-    liver_cancer_death_rate = pd.read_csv('C:/Users/acc/Desktop/HCA project/liver cancer death rate per 100,000.csv')
+    liver_cancer_death_rate = pd.read_csv('liver cancer death rate per 100,000.csv')
 
     # Define a function to create the gender graph
     def create_gender_graph(selected_age):
@@ -166,7 +166,7 @@ def show_liver_cancer_page():
 
     ###########################################################################3
     # Load liver cancer DALY rate data
-    liver_cancer_daly_rate = pd.read_csv('C:/Users/acc/Desktop/HCA project/liver cancer daly rates per 100,000.csv')
+    liver_cancer_daly_rate = pd.read_csv('liver cancer daly rates per 100,000.csv')
 
     # Define a function to create the gender graph
     def create_gender_graph(selected_age):
