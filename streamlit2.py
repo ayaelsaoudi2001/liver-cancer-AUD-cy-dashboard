@@ -9,7 +9,7 @@ def show_AUD_page():
     st.markdown("<h1 style='text-align: center;'>Alcohol Use Disorder Rates in Cyprus</h1><br><br><br><br>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: left;'>Alcohol Use Disorder Rate in the Mediterranean Region</h3>", unsafe_allow_html=True)
 
-    regional_alcohol_data = pd.read_csv('C:/Users/acc/Desktop/HCA project/world-share-with-alcohol-use-disorders.csv')
+    regional_alcohol_data = pd.read_csv('world-share-with-alcohol-use-disorders.csv')
     regional_alcohol_data["Current number of cases of alcohol use disorders per 100 people, in both sexes aged age-standardized"]=regional_alcohol_data["Current number of cases of alcohol use disorders per 100 people, in both sexes aged age-standardized"]*1000
 
     # Filter data for specific entities
@@ -82,7 +82,7 @@ def show_AUD_page():
 
     ################################################################################
 
-    number_alcohol_use_disorder = pd.read_csv('C:/Users/acc/Desktop/HCA project/number-with-alcohol-use-disorders.csv')
+    number_alcohol_use_disorder = pd.read_csv('number-with-alcohol-use-disorders.csv')
     number_alcohol_use_disorder_copy = number_alcohol_use_disorder.copy()
     number_alcohol_use_disorder_copy["Males"] = number_alcohol_use_disorder_copy["Current number of cases of alcohol use disorders, in males aged all ages"]
     number_alcohol_use_disorder_copy["Females"] = number_alcohol_use_disorder_copy["Current number of cases of alcohol use disorders, in females aged all ages"]
@@ -92,7 +92,7 @@ def show_AUD_page():
     number_alcohol_use_disorder_copy['Percentage Males'] = (number_alcohol_use_disorder_copy['Males'] / number_alcohol_use_disorder_copy['Total']) * 100
     number_alcohol_use_disorder_copy['Percentage Females'] = (number_alcohol_use_disorder_copy['Females'] / number_alcohol_use_disorder_copy['Total']) * 100
 
-    population = pd.read_csv('C:/Users/acc/Desktop/HCA project/population-by-age-group.csv')
+    population = pd.read_csv('population-by-age-group.csv')
     population_copy = population.copy()
     population_copy['Total Population'] = population_copy.iloc[:, 3:].sum(axis=1)
     cyprus_pop = population_copy[population_copy['Entity'] == 'Cyprus']
@@ -111,7 +111,7 @@ def show_AUD_page():
     cyprus_pop["total alcohol use disorders"] = number_alcohol_use_disorder_copy['Total']
     cyprus_pop['Rate per 100,000'] = (cyprus_pop['total alcohol use disorders'] / cyprus_pop['Total Population']) * 100000
 
-    aud_by_age = pd.read_csv('C:/Users/acc/Desktop/HCA project/prevalence-of-alcohol-use-disorders-by-age.csv')
+    aud_by_age = pd.read_csv('prevalence-of-alcohol-use-disorders-by-age.csv')
     columns_to_convert = [
         'Current number of cases of alcohol use disorders per 100 people, in both sexes aged all ages',
         'Current number of cases of alcohol use disorders per 100 people, in both sexes aged 70+ years',
